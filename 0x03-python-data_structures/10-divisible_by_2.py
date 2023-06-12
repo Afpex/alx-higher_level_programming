@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-  if not my_list:
-      return []
+def divisible_by_2(my_list=[]):
+    if not my_list:
+        return []
 
   new_list = [element % 2 == 0 for element in my_list]
 
