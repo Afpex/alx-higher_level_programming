@@ -13,6 +13,7 @@ if __name__ == "__main__":
         commits_url = "https://api.github.com/repos/{}/{}/commits" \
                 .format(owner_name, repo_name)
         response = requests.get(commits_url)
+        response.raise_for_status()
         json_obj = response.json()
         for k, obj in enumerate(json_obj):
             if k == 10:
@@ -20,5 +21,5 @@ if __name__ == "__main__":
             if type(obj) is dict:
                 name = obj.get('commit').get('author').get('name')
                 print("{}: {}".format(obj.get('sha'), name))
-        except ValueError as invalid_json:
-            pass
+    except requests.exceptions.RequestException as req_error:
+        print(f"An error occurred during the request: {req_error}")
