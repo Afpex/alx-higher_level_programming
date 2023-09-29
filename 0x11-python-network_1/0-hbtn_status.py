@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" A script that fetches https://alx-intranet.hbtn.io/status using the urlib package
+""" A script that fetches https://alx-intranet.hbtn.io/status using
+the urlib package
 This script sends an HTTP GET request to the specified url and displays
 information about the response
 """
